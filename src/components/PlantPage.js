@@ -17,13 +17,16 @@ const onFormSubmit = (newPlant) => {
 setPlants([...plants, newPlant])
 }
 
-console.log(searchVal)
+function onDelete(toDelete) {
+  const updatePlants =plants.filter((plant) => plant.id !== toDelete.id);
+  setPlants(updatePlants);
+}
 
   return (
     <main>
       <NewPlantForm onFormSubmit={onFormSubmit} />
       <Search setSearchVal={setSearchVal}/>
-      <PlantList 
+      <PlantList onDelete={onDelete}
       plants={plants.filter(plant => plant.name.toLowerCase().includes(searchVal.toLowerCase()))}/>
     </main>
   );
