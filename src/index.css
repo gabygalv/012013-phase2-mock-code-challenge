@@ -43,8 +43,6 @@ header h1 {
 .logo {
   font-size: 1.25em;
   padding-left: 0.5rem;
-  color: transparent;
-  text-shadow: 0 0 0 var(--green);
 }
 
 main {
@@ -98,11 +96,13 @@ input:focus {
 }
 
 .cards {
-  list-style: none;
+  list-style: square;
 }
 
 .card {
   margin: 1rem;
+  list-style: square;
+
 }
 
 .card img {

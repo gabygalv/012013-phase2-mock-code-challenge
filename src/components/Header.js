@@ -4,9 +4,9 @@ function Header() {
   return (
     <header>
       <h1>
-        Plantsy
+        BobsBook
         <span className="logo" role="img">
-          🌱
+        🍔
         </span>
       </h1>
     </header>

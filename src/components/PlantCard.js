@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function PlantCard({plant , onDelete}) {
-  const {name, image, price} = plant;
+  const {name, image, gender, occupation, wikiUrl} = plant;
   const [isSold, setIsSold] = useState(true)
 
   const toggleSold = () =>{
@@ -19,15 +19,18 @@ function PlantCard({plant , onDelete}) {
   }
 
   return (
-    <li className="card">
-      <img src={image} alt={name} />
+    <ul className="card">
+      <img src={image} alt={name} height="250px"/>
       <h4>{name}</h4>
-      <p>Price: ${price}</p>
+      <p>Gender: {gender}</p>
+      <p>Occupation: {occupation}</p>
+      <a href={wikiUrl}>Wiki link</a>
+      <br/>
       {isSold ? (
-        <button onClick={toggleSold} className="primary">In Stock</button>
-      ) : (<button>Out of Stock</button>)}
+        <button onClick={toggleSold} className="primary">Add Friend</button>
+      ) : (<button>Friends!</button>)}
       <button className="button" onClick={handleDelete}> Delete </button>
-    </li>
+    </ul>
   );
 }
 

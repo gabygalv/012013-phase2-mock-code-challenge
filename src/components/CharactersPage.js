@@ -8,7 +8,7 @@ const [plants, setPlants] = useState([])
 const [searchVal,setSearchVal] = useState('')
 
 useEffect(() => {
-fetch("http://localhost:6001/plants")
+fetch("https://bobsburgers-api.herokuapp.com/characters/?limit=100")
 .then(res => res.json())
 .then(setPlants)
 }, [])
@@ -24,7 +24,7 @@ function onDelete(toDelete) {
 
   return (
     <main>
-      <NewPlantForm onFormSubmit={onFormSubmit} />
+      {/* <NewPlantForm onFormSubmit={onFormSubmit} /> */}
       <Search setSearchVal={setSearchVal}/>
       <PlantList onDelete={onDelete}
       plants={plants.filter(plant => plant.name.toLowerCase().includes(searchVal.toLowerCase()))}/>
